@@ -33,5 +33,14 @@
         "allow-plugins": {
             "phpstan/extension-installer": true
         }
+    },
+    "scripts": {
+        "style-check": "vendor/bin/php-cs-fixer check",
+        "style-fix": "vendor/bin/php-cs-fixer fix",
+        "test": "phpunit",
+        "cqt": [
+            "@style-fix",
+            "@test"
+        ]
     }
 }

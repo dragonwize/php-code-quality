@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Dragonwize\PhpCodeQuality\Tests\PhpCsFixer\Rule;
 
@@ -130,7 +128,7 @@ final class VariableNameCaseFixerTest extends TestCase
 
     public function testFixDoesNotRenameThis(): void
     {
-        $code = '<?php class Foo { public function bar() { return $this->baz; } }';
+        $code   = '<?php class Foo { public function bar() { return $this->baz; } }';
         $tokens = Tokens::fromCode($code);
         $this->fixer->fix(new \SplFileInfo(__FILE__), $tokens);
 
@@ -189,7 +187,7 @@ final class VariableNameCaseFixerTest extends TestCase
 
     public function testFixDoesNotModifyCodeWithNoVariables(): void
     {
-        $code = '<?php echo "hello world";';
+        $code   = '<?php echo "hello world";';
         $tokens = Tokens::fromCode($code);
         $this->fixer->fix(new \SplFileInfo(__FILE__), $tokens);
 
@@ -202,7 +200,7 @@ final class VariableNameCaseFixerTest extends TestCase
 
     public function testFixHandlesMixedVariablesInSameFile(): void
     {
-        $input = '<?php $already_camel = 1; $alreadyCamel = 2;';
+        $input  = '<?php $already_camel = 1; $alreadyCamel = 2;';
         $tokens = Tokens::fromCode($input);
         $this->fixer->fix(new \SplFileInfo(__FILE__), $tokens);
 
