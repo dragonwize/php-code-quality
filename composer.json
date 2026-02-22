@@ -17,6 +17,11 @@
             "Dragonwize\\PhpCodeQuality\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Dragonwize\\PhpCodeQuality\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "dragonwize",
